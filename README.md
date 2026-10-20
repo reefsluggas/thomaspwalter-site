@@ -17,7 +17,7 @@ Open the file under `src/content/pages/`, click the pencil, change the text, cli
 
 ## Deploy settings (GitHub → Settings)
 
-Secrets: `SFTP_HOST`, `SFTP_USER`, `SFTP_KEY` (private key), optional `SFTP_PORT`.
+Secrets: `SFTP_HOST`, `SFTP_USER`, `SFTP_KEY` (private key), `SFTP_KEY_PASSPHRASE` (the key password), optional `SFTP_PORT`.
 Variables: `REMOTE_PATH` (the folder SiteGround gave the subdomain, e.g. `thomaspwalter.com/new/public_html`), `PUBLIC_STAGING` (`1` shows the staging banner; leave empty for the live site).
 
 To go live, change `REMOTE_PATH` to the main site folder and clear `PUBLIC_STAGING`.
