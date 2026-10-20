@@ -1,0 +1,36 @@
+---
+const { active = '' } = Astro.props;
+const links = [
+  ['/weddings/', 'Weddings'],
+  ['/private-events/', 'Private Events'],
+  ['/how-it-works/', 'Working with me'],
+  ['/planning/', 'Planning'],
+  ['/venues/', 'Venues'],
+  ['/reviews/', 'Reviews'],
+  ['/about/', 'About'],
+];
+const staging = import.meta.env.PUBLIC_STAGING === '1';
+---
+{staging && <div class="note">Staging preview. Photos are stand-ins. <a href="/">Home</a></div>}
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/img/mark.png" alt=""><span>Thomas P. Walter</span></a>
+    <ul class="links">
+      {links.map(([href, label]) => <li><a href={href} class={href === active ? 'active' : undefined}>{label}</a></li>)}
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn" href="/book/">Check availability</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+  </div>
+  <div class="mobile" id="mobileNav">
+    <ul>
+      {links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
+      <li><a href="/listen/">Listen</a></li>
+      <li><a href="/book/">Check availability</a></li>
+    </ul>
+  </div>
+</nav>
+<script is:inline>
+(function(){var b=document.getElementById('menuBtn'),m=document.getElementById('mobileNav');if(b)b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)})})();
+</script>

@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import body from '../content/pages/reviews.html?raw';
+---
+<Layout title="DJ Thomas P. Walter Reviews" description="Reviews from Pittsburgh couples, with venue names. 5.0 on Google." active="/reviews/" close={true}>
+  <Fragment set:html={body} />
+</Layout>

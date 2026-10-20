@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import body from '../content/pages/venues.html?raw';
+---
+<Layout title="Pittsburgh Wedding Venues I Know" description="Sound, setup and lighting notes for Pittsburgh wedding venues, from a DJ who has worked them. Photos and reviews from each room." active="/venues/" close={true}>
+  <Fragment set:html={body} />
+</Layout>

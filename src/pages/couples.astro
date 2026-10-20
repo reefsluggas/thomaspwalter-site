@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import body from '../content/pages/couples.html?raw';
+---
+<Layout title="For My Couples" description="Everything you need from DJ Thomas P. Walter in one place: planning app, account, meetings, tips and day-of notes." active="/couples/" close={false}>
+  <Fragment set:html={body} />
+</Layout>

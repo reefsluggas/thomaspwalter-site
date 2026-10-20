@@ -1,0 +1,35 @@
+<header class="ph"><div class="wrap"><span class="caps">Check availability</span><h1>Let's see if I'm free.</h1><p class="lede">Tell me the date and where, and I'll tell you right away.</p></div></header>
+<section style="padding-top:0"><div class="wrap cols">
+  <div>
+    <form class="form" id="chk">
+      <div class="field"><label for="d">Wedding or event date</label><input id="d" name="d" type="date" required></div>
+      <div class="field"><label for="v">Venue or city</label><input id="v" name="v" type="text" placeholder="Not sure yet is fine" autocomplete="off"></div>
+      <div><button class="btn fill" type="submit">Check</button></div>
+      <p class="sample">Mockup only: Saturdays in June 2027 count as booked, and "Springwood Manor" is on the no-go list, so you can see all three outcomes. The real version checks your gig calendar.</p>
+    </form>
+    <div class="result" id="open" hidden>
+      <span class="caps">Good news</span>
+      <h2><span id="openDate"></span> is open.</h2>
+      <p class="muted">Fill this in and pick a time for us to talk. It's a 20-minute call, no pressure, and I'll send a written quote after. Saturdays April through November start at $2,500, and most couples spend around $2,950 for ceremony and reception coverage.</p>
+      <div class="hb"><b>HoneyBook lead form embeds here</b><span>Name · Email · Phone (optional, if you'd rather text) · How did you hear about me? · then the scheduler block to pick a call time.</span></div>
+      <p class="small">Rather text? 814.594.6882. Email works too: djthomaspwalter@gmail.com. I check texts fastest.</p>
+    </div>
+    <div class="result" id="taken" hidden>
+      <span class="caps">Sorry</span>
+      <h2>I'm already booked on <span id="takenDate"></span>.</h2>
+      <p class="muted">I never schedule more than one event a day, so that one's gone. Leave your info and I'll send you a few DJs I trust, with a note about each one.</p>
+      <div class="hb"><b>Referral form embeds here</b><span>Name · Email · Send me the list</span></div>
+    </div>
+    <div class="result" id="nogo" hidden>
+      <span class="caps">Not this one</span>
+      <h2>I'm not the right DJ for <span id="nogoVenue"></span>, but I know who is.</h2>
+      <p class="muted">Leave your info and I'll send you a few DJs I trust, with a note about each one. [Placeholder wording, yours to change. It says nothing about the venue.]</p>
+      <div class="hb"><b>Referral form embeds here</b><span>Name · Email · Send me the list</span></div>
+    </div>
+  </div>
+  <div style="display:grid;gap:30px">
+    <blockquote class="prose" style="margin:0"><span style="font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4">"Booking the DJ for our wedding was my one and only job so I knew I had to find the perfect one! DJ Thomas was just that."</span><cite class="caps" style="color:var(--muted)">Brandon and Mariah</cite></blockquote>
+    <div class="intro" style="padding:0"><div class="pic" style="justify-self:start;max-width:100%"><img src="/img/ceremony.jpg" alt=""></div></div>
+  </div>
+</div></section>
+<script>(function(){var f=document.getElementById('chk');f.addEventListener('submit',function(e){e.preventDefault();var d=new Date(f.d.value+'T12:00:00'),v=(f.v.value||'').trim();['open','taken','nogo'].forEach(function(i){document.getElementById(i).hidden=true});var nice=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});if(/springwood/i.test(v)){document.getElementById('nogoVenue').textContent=v;document.getElementById('nogo').hidden=false}else if(d.getFullYear()===2027&&d.getMonth()===5&&d.getDay()===6){document.getElementById('takenDate').textContent=nice;document.getElementById('taken').hidden=false}else{document.getElementById('openDate').textContent=nice;document.getElementById('open').hidden=false}})})();</script>

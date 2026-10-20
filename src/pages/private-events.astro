@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import body from '../content/pages/private-events.html?raw';
+---
+<Layout title="Pittsburgh Party and Event DJ" description="DJ Thomas P. Walter for birthdays, corporate events, mitzvahs and parties in Pittsburgh. Trivia and game nights too." active="/private-events/" close={true}>
+  <Fragment set:html={body} />
+</Layout>

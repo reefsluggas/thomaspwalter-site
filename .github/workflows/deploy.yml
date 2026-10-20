@@ -1,0 +1,31 @@
+name: Build and deploy to SiteGround
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          PUBLIC_STAGING: ${{ vars.PUBLIC_STAGING }}
+      - name: Upload to SiteGround over SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.5
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          port: ${{ secrets.SFTP_PORT || 22 }}
+          username: ${{ secrets.SFTP_USER }}
+          ssh_private_key: ${{ secrets.SFTP_KEY }}
+          local_path: './dist/*'
+          remote_path: ${{ vars.REMOTE_PATH }}
+          sftp_only: true
+          delete_remote_files: true

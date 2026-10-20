@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import body from '../content/pages/about.html?raw';
+---
+<Layout title="About DJ Thomas P. Walter, Pittsburgh Wedding DJ" description="Full-time since 2014, mixing style, no cheesy mic work. The answers to every question couples ask before booking." active="/about/" close={true}>
+  <Fragment set:html={body} />
+</Layout>

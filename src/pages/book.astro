@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import body from '../content/pages/book.html?raw';
+---
+<Layout title="Check Availability, DJ Thomas P. Walter" description="See if your date is open and book a 20-minute call. Pittsburgh wedding and event DJ." active="/book/" close={false}>
+  <Fragment set:html={body} />
+</Layout>

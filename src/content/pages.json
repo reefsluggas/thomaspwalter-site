@@ -1,0 +1,86 @@
+{
+ "about": {
+  "route": "/about/",
+  "title": "About DJ Thomas P. Walter, Pittsburgh Wedding DJ",
+  "description": "Full-time since 2014, mixing style, no cheesy mic work. The answers to every question couples ask before booking.",
+  "close": true
+ },
+ "book": {
+  "route": "/book/",
+  "title": "Check Availability, DJ Thomas P. Walter",
+  "description": "See if your date is open and book a 20-minute call. Pittsburgh wedding and event DJ.",
+  "close": false
+ },
+ "cost": {
+  "route": "/cost/",
+  "title": "How Much Does a Wedding DJ Cost in Pittsburgh?",
+  "description": "Real Pittsburgh wedding DJ prices, what moves them, and what you should get for the money, from a DJ who publishes his own.",
+  "close": true
+ },
+ "couples": {
+  "route": "/couples/",
+  "title": "For My Couples",
+  "description": "Everything you need from DJ Thomas P. Walter in one place: planning app, account, meetings, tips and day-of notes.",
+  "close": false
+ },
+ "how-it-works": {
+  "route": "/how-it-works/",
+  "title": "Working With Me, Pittsburgh Wedding DJ Thomas P. Walter",
+  "description": "What the year before your wedding looks like with DJ Thomas P. Walter, from checking the date to the last song. Seven steps, each with a short video.",
+  "close": true
+ },
+ "index": {
+  "route": "/",
+  "title": "DJ Thomas P. Walter, Pittsburgh Wedding DJ",
+  "description": "Pittsburgh wedding DJ Thomas P. Walter. Full-time since 2014, 400+ weddings, ceremony to last song.",
+  "close": true
+ },
+ "listen": {
+  "route": "/listen/",
+  "title": "Hear Pittsburgh Wedding DJ Thomas P. Walter",
+  "description": "Live wedding recordings, demo mixes and video. Listen for the transitions.",
+  "close": true
+ },
+ "planning-timeline": {
+  "route": "/planning-timeline/",
+  "title": "How to build a reception timeline that doesn't feel rushed",
+  "description": "A reception that feels relaxed has the formalities done inside the first 90 minutes, dinner served promptly, and the dance floor open with two and a half hours to go.",
+  "close": true
+ },
+ "planning": {
+  "route": "/planning/",
+  "title": "Wedding Planning Tips From a Pittsburgh DJ",
+  "description": "Timelines, ceremony music, must plays, toasts and more. What DJ Thomas P. Walter tells every couple, written down.",
+  "close": true
+ },
+ "private-events": {
+  "route": "/private-events/",
+  "title": "Pittsburgh Party and Event DJ",
+  "description": "DJ Thomas P. Walter for birthdays, corporate events, mitzvahs and parties in Pittsburgh. Trivia and game nights too.",
+  "close": true
+ },
+ "reviews": {
+  "route": "/reviews/",
+  "title": "DJ Thomas P. Walter Reviews",
+  "description": "Reviews from Pittsburgh couples, with venue names. 5.0 on Google.",
+  "close": true
+ },
+ "venue-wintergarden": {
+  "route": "/venue-wintergarden/",
+  "title": "Wintergarden at PPG Place Wedding DJ, Pittsburgh",
+  "description": "DJ Thomas P. Walter at the Wintergarden at PPG Place: where the booth goes, how the room sounds, photos and reviews from couples married there.",
+  "close": false
+ },
+ "venues": {
+  "route": "/venues/",
+  "title": "Pittsburgh Wedding Venues I Know",
+  "description": "Sound, setup and lighting notes for Pittsburgh wedding venues, from a DJ who has worked them. Photos and reviews from each room.",
+  "close": true
+ },
+ "weddings": {
+  "route": "/weddings/",
+  "title": "Wedding DJ Pricing and Packages, Pittsburgh",
+  "description": "What it costs to book DJ Thomas P. Walter for your Pittsburgh wedding, what is included, and the three add-ons. No sales call needed to see a number.",
+  "close": true
+ }
+}
