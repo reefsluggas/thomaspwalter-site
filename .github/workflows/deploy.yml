@@ -24,8 +24,25 @@ jobs:
           SFTP_KEY_PASSPHRASE: ${{ secrets.SFTP_KEY_PASSPHRASE }}
         run: |
           mkdir -p ~/.ssh
-          printf '%s\n' "$SFTP_KEY" > ~/.ssh/deploy_key
+          # Rebuild the key's line breaks in case they were lost when the secret was pasted.
+          python3 - "$SFTP_KEY" > ~/.ssh/deploy_key <<'PY'
+          import re, sys
+          k = sys.argv[1].replace('\r', '').strip()
+          m = re.match(r'(-----BEGIN [A-Z ]+-----)(.*?)(-----END [A-Z ]+-----)$', k, re.S)
+          if not m:
+              sys.exit('SFTP_KEY secret does not look like a private key (missing BEGIN/END lines)')
+          head, body, tail = m.groups()
+          lines = [l.strip() for l in body.strip().split('\n')]
+          headers = [l for l in lines if ':' in l]
+          data = ''.join(l for l in lines if l and ':' not in l).replace(' ', '')
+          if '\n' not in body.strip():
+              # single line: headers are not separable, assume none
+              headers, data = [], body.strip().replace(' ', '')
+          out = [head] + headers + ([''] if headers else []) + [data[i:i+64] for i in range(0, len(data), 64)] + [tail]
+          print('\n'.join(out))
+          PY
           chmod 600 ~/.ssh/deploy_key
+          ssh-keygen -y -P "$SFTP_KEY_PASSPHRASE" -f ~/.ssh/deploy_key >/dev/null
           if [ -n "$SFTP_KEY_PASSPHRASE" ]; then
             ssh-keygen -p -P "$SFTP_KEY_PASSPHRASE" -N "" -f ~/.ssh/deploy_key >/dev/null
           fi
